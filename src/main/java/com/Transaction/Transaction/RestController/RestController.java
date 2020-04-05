@@ -1,14 +1,19 @@
 package com.Transaction.Transaction.RestController;
 
+import com.Transaction.Transaction.Entites.Data;
+import com.Transaction.Transaction.Services.ServDaoSimple;
 import com.Transaction.Transaction.Services.SimpleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
     @Autowired
     private SimpleService simpleService;
+    @Autowired
+    private ServDaoSimple servDaoSimple;
 
     @GetMapping("/")
     public String sayHello() {
@@ -30,6 +35,12 @@ public class RestController {
     @GetMapping("/now")
     public int now() {
         return this.simpleService.getIndex();
+    }
+
+    @GetMapping("/{id}")
+    public Data getData(@PathVariable int id) {
+        System.out.println(id);
+        return this.servDaoSimple.getData(id);
     }
 
 }

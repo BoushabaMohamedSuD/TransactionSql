@@ -7,6 +7,7 @@ import com.Transaction.Transaction.Services.SimpleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -41,6 +42,11 @@ public class RestController {
     public Data getData(@PathVariable int id) {
         System.out.println(id);
         return this.servDaoSimple.getData(id);
+    }
+
+    @GetMapping("/set")
+    public Data getData(@RequestBody Data data) {
+        return this.servDaoSimple.setData(data);
     }
 
 }

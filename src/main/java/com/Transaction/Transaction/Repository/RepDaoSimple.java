@@ -24,4 +24,11 @@ public class RepDaoSimple {
         return data;
     }
 
+    @Transactional
+    public Data setData(Data data) {
+        Session currentSession = entityManager.unwrap(Session.class);
+        currentSession.save(data);
+        return data;
+    }
+
 }

@@ -14,9 +14,16 @@ public class ServDaoSimple {
     @Autowired
     public RepDaoSimple repDaoSimple;
 
-    
     public Data getData(int id) {
         return this.repDaoSimple.getData(id);
+    }
+
+    public Data setData(Data data) {
+        return this.repDaoSimple.setData(data);
+    }
+
+    public Data make(Data data) {
+        return null;
     }
 
 }

@@ -30,11 +30,12 @@ public class ServDaoSimple {
     @Transactional
     public Data make(Data data) {
 
+        this.repDaoSimple.setData(data);
         Data newData = new Data();
         newData.setNom("testsqs");
         newData.setDescription("testsqs");
         this.repDaoSimple.setData(newData);
-        this.repDaoSimple.setData(data);
+
         return this.repDaoSimple.getData(5);
     }
 

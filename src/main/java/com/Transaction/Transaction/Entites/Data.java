@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.UniqueElements;
-
 @Entity
 @Table(name = "data")
 public class Data {
@@ -17,9 +15,9 @@ public class Data {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(unique = true)
+    @Column
     private String Nom;
-    @Column(unique = false)
+    @Column
     private String Description;
 
     public int getId() {

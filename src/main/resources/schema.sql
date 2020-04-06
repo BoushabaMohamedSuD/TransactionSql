@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS  data
+(
+    id SMALLINT
+    UNSIGNED NOT NULL AUTO_INCREMENT,
+    Nom VARCHAR
+    (40) NOT NULL UNIQUE,
+    Description VARCHAR
+    (60) NOT NULL,
+    
+    
+    PRIMARY KEY
+    (id)
+)
+ENGINE=INNODB;

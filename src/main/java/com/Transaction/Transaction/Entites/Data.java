@@ -16,10 +16,10 @@ public class Data {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column
-    @UniqueElements
+
+    @Column(unique = true)
     private String Nom;
-    @Column
+    @Column(unique = false)
     private String Description;
 
     public int getId() {

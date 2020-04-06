@@ -22,8 +22,20 @@ public class ServDaoSimple {
         return this.repDaoSimple.setData(data);
     }
 
+    // if you remove @transaction her
+    // each query will run as an undependant transacion
+    // the roll back will work just for the query that will
+    // throw an unchecked exception
+
+    @Transactional
     public Data make(Data data) {
-        return null;
+
+        Data newData = new Data();
+        newData.setNom("testsqs");
+        newData.setDescription("testsqs");
+        this.repDaoSimple.setData(newData);
+        this.repDaoSimple.setData(data);
+        return this.repDaoSimple.getData(5);
     }
 
 }
